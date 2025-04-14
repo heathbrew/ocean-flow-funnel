@@ -1,8 +1,7 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { FileText, Award, Users, Star } from 'lucide-react';
+import { FileText, Award, Users, Star, Clock as ClockIcon } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PricingCard from '@/components/PricingCard';
@@ -167,7 +166,7 @@ const Packages: React.FC = () => {
             
             <div className="bg-white p-8 rounded-lg shadow-md">
               <div className="text-primary mb-4">
-                <Clock size={40} className="inline" />
+                <ClockIcon size={40} className="inline" />
               </div>
               <h3 className="text-xl font-bold mb-3">Quick Turnaround</h3>
               <p className="text-gray-600">
