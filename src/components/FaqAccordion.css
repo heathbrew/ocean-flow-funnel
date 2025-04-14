@@ -1,0 +1,17 @@
+
+.faq-accordion {
+  width: 100%;
+}
+
+.faq-item {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.faq-question {
+  text-align: left;
+  font-weight: 500;
+}
+
+.faq-answer {
+  color: #6b7280;
+}

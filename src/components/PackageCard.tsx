@@ -3,6 +3,7 @@ import React from 'react';
 import { Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import './PackageCard.css';
 
 interface PackageCardProps {
   title: string;
@@ -24,31 +25,31 @@ const PackageCard: React.FC<PackageCardProps> = ({
   ctaLink,
 }) => {
   return (
-    <div className="border rounded-lg overflow-hidden shadow-sm">
-      <div className={`p-4 text-center font-bold ${isPopular ? 'bg-secondary text-white' : 'bg-secondary/30 text-primary'}`}>
+    <div className={`package-card ${isPopular ? 'package-card-popular' : ''}`}>
+      <div className={`package-card-header ${isPopular ? 'package-card-header-popular' : ''}`}>
         {title}
       </div>
       
-      <div className="p-6 bg-white">
-        <div className="text-center mb-4">
-          <p className="text-gray-600">{subtitle}</p>
-          <h3 className="text-3xl font-bold text-primary my-4">
-            ${price}{priceNote && <span className="text-sm">{priceNote}</span>}
+      <div className="package-card-body">
+        <div className="package-card-pricing">
+          <p className="package-card-subtitle">{subtitle}</p>
+          <h3 className="package-card-price">
+            ${price}{priceNote && <span className="package-card-price-note">{priceNote}</span>}
           </h3>
         </div>
         
-        <div className="space-y-3 mb-6">
+        <div className="package-card-features">
           {features.map((feature, index) => (
-            <div key={index} className="flex items-center">
-              <Check className="w-5 h-5 text-green-500 mr-2 flex-shrink-0" />
-              <span className="text-gray-600">{feature}</span>
+            <div key={index} className="package-card-feature">
+              <Check className="feature-icon" />
+              <span className="feature-text">{feature}</span>
             </div>
           ))}
         </div>
         
         <Link to={ctaLink}>
           <Button 
-            className={`w-full ${isPopular ? 'bg-secondary hover:bg-secondary/90' : 'bg-primary hover:bg-primary/90'}`}
+            className={`package-card-button ${isPopular ? 'package-card-button-popular' : ''}`}
           >
             Get now
           </Button>

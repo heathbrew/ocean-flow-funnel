@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar } from 'lucide-react';
+import './BlogCard.css';
 
 interface BlogCardProps {
   title: string;
@@ -17,20 +18,20 @@ const BlogCard: React.FC<BlogCardProps> = ({
   link,
 }) => {
   return (
-    <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-      <Link to={link} className="block">
+    <div className="blog-card">
+      <Link to={link} className="blog-card-link">
         <img 
           src={image} 
           alt={title} 
-          className="w-full h-48 object-cover"
+          className="blog-card-image"
         />
-        <div className="p-4">
-          <div className="w-12 h-1 bg-secondary mb-4"></div>
-          <h3 className="text-lg font-semibold text-primary hover:text-secondary mb-3 line-clamp-2">
+        <div className="blog-card-content">
+          <div className="blog-card-divider"></div>
+          <h3 className="blog-card-title">
             {title}
           </h3>
-          <div className="flex items-center text-gray-500 text-sm">
-            <Calendar className="h-4 w-4 mr-1" />
+          <div className="blog-card-date">
+            <Calendar className="date-icon" />
             {date}
           </div>
         </div>

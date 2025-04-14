@@ -1,0 +1,81 @@
+
+.hero-form {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero-form-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #1e3a8a;
+}
+
+.hero-form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hero-form-input {
+  background-color: #f3f4f6;
+}
+
+.hero-form-phone {
+  display: flex;
+}
+
+.hero-form-country-code {
+  background-color: #f3f4f6;
+  display: flex;
+  align-items: center;
+  padding: 0 0.75rem;
+  border-top-left-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+  border: 1px solid #e5e7eb;
+  border-right: 0;
+}
+
+.hero-form-phone-input {
+  background-color: #f3f4f6;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.hero-form-recaptcha {
+  padding-top: 0.5rem;
+}
+
+.hero-form-recaptcha-box {
+  background-color: #f3f4f6;
+  border-radius: 0.375rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.hero-form-recaptcha-checkbox {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  border: 1px solid #9ca3af;
+  margin-top: 0.25rem;
+}
+
+.hero-form-recaptcha-text {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.hero-form-submit {
+  width: 100%;
+  background-color: #1e3a8a;
+  color: white;
+}
+
+.hero-form-submit:hover {
+  background-color: #1e40af;
+}

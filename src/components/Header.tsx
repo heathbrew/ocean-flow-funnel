@@ -3,31 +3,32 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import Logo from './Logo';
+import './Header.css';
 
 const Header: React.FC = () => {
   return (
-    <header className="w-full bg-white py-4 px-6 shadow-sm">
-      <div className="container mx-auto flex justify-between items-center">
+    <header className="header">
+      <div className="header-container">
         <Logo />
-        <nav className="hidden md:flex items-center space-x-8">
-          <Link to="/" className="text-gray-700 hover:text-primary font-medium">
+        <nav className="header-nav">
+          <Link to="/" className="nav-link">
             Home
           </Link>
-          <Link to="/services" className="text-gray-700 hover:text-primary font-medium">
+          <Link to="/services" className="nav-link">
             Services
           </Link>
-          <Link to="/packages" className="text-gray-700 hover:text-primary font-medium">
+          <Link to="/packages" className="nav-link">
             Packages
           </Link>
-          <Link to="/blog" className="text-gray-700 hover:text-primary font-medium">
+          <Link to="/blog" className="nav-link">
             Blog
           </Link>
         </nav>
-        <div className="flex items-center space-x-4">
-          <Button variant="outline" className="hidden md:inline-flex">
+        <div className="header-buttons">
+          <Button variant="outline" className="login-button">
             Login
           </Button>
-          <Button className="bg-primary hover:bg-primary-light text-white">
+          <Button className="get-started-button">
             Get Started
           </Button>
         </div>

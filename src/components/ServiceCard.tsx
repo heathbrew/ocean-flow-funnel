@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import './ServiceCard.css';
 
 interface ServiceCardProps {
   title: string;
@@ -17,12 +18,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   link,
 }) => {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg border border-gray-100">
-      <div className="text-primary mb-4">{icon}</div>
-      <h3 className="text-xl font-bold mb-3">{title}</h3>
-      <p className="text-gray-600 mb-6">{description}</p>
+    <div className="service-card">
+      <div className="service-card-icon">{icon}</div>
+      <h3 className="service-card-title">{title}</h3>
+      <p className="service-card-description">{description}</p>
       <Link to={link}>
-        <Button variant="outline" className="text-primary border-primary hover:bg-primary hover:text-white">
+        <Button variant="outline" className="service-card-button">
           Learn More
         </Button>
       </Link>

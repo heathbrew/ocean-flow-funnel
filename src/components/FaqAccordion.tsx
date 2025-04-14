@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import './FaqAccordion.css';
 
 interface FaqItem {
   question: string;
@@ -18,13 +19,13 @@ interface FaqAccordionProps {
 
 const FaqAccordion: React.FC<FaqAccordionProps> = ({ faqs }) => {
   return (
-    <Accordion type="single" collapsible className="w-full">
+    <Accordion type="single" collapsible className="faq-accordion">
       {faqs.map((faq, index) => (
-        <AccordionItem key={index} value={`item-${index}`}>
-          <AccordionTrigger className="text-left font-medium">
+        <AccordionItem key={index} value={`item-${index}`} className="faq-item">
+          <AccordionTrigger className="faq-question">
             {faq.question}
           </AccordionTrigger>
-          <AccordionContent className="text-gray-600">
+          <AccordionContent className="faq-answer">
             {faq.answer}
           </AccordionContent>
         </AccordionItem>

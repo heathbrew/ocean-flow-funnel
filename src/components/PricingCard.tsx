@@ -3,6 +3,7 @@ import React from 'react';
 import { Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import './PricingCard.css';
 
 interface PricingFeature {
   text: string;
@@ -27,31 +28,29 @@ const PricingCard: React.FC<PricingCardProps> = ({
   ctaLink,
 }) => {
   return (
-    <div className={`relative bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl ${isPopular ? 'border-2 border-secondary transform scale-105 md:scale-110 z-10' : 'border border-gray-200'}`}>
+    <div className={`pricing-card ${isPopular ? 'pricing-card-popular' : ''}`}>
       {isPopular && (
-        <div className="absolute top-0 right-0 bg-secondary text-white px-4 py-1 text-xs font-semibold">
+        <div className="pricing-card-badge">
           MOST POPULAR
         </div>
       )}
       
-      <div className="p-6">
-        <h3 className="text-xl font-bold text-center mb-4">{title}</h3>
+      <div className="pricing-card-content">
+        <h3 className="pricing-card-title">{title}</h3>
         
-        <div className="text-center mb-6">
-          <span className="text-3xl font-bold">${price}</span>
+        <div className="pricing-card-price">
+          <span>${price}</span>
         </div>
         
-        <div className="space-y-3 mb-8">
+        <div className="pricing-card-features">
           {features.map((feature, index) => (
-            <div key={index} className="flex items-start">
+            <div key={index} className="pricing-feature">
               {feature.included ? (
-                <Check className="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                <Check className="pricing-feature-check" />
               ) : (
-                <div className="w-5 h-5 flex items-center justify-center mr-2 flex-shrink-0">
-                  <div className="w-1.5 h-1.5 rounded-full bg-gray-400"></div>
-                </div>
+                <div className="pricing-feature-dot"></div>
               )}
-              <span className={feature.included ? 'text-gray-800' : 'text-gray-500'}>
+              <span className={feature.included ? 'pricing-feature-included' : 'pricing-feature-excluded'}>
                 {feature.text}
               </span>
             </div>
@@ -60,7 +59,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
         
         <Link to={ctaLink}>
           <Button 
-            className={`w-full ${isPopular ? 'bg-secondary hover:bg-secondary/90' : 'bg-primary hover:bg-primary/90'}`}
+            className={`pricing-card-button ${isPopular ? 'pricing-card-button-popular' : ''}`}
           >
             {ctaText}
           </Button>

@@ -6,6 +6,7 @@ import { Form, FormControl, FormField, FormItem } from '@/components/ui/form';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import './HeroForm.css';
 
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Name is required' }),
@@ -33,11 +34,11 @@ const HeroForm: React.FC = () => {
   };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg">
-      <h3 className="text-xl font-bold mb-6 text-primary">Please Provide Your Details</h3>
+    <div className="hero-form">
+      <h3 className="hero-form-title">Please Provide Your Details</h3>
       
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="hero-form-fields">
           <FormField
             control={form.control}
             name="name"
@@ -46,7 +47,7 @@ const HeroForm: React.FC = () => {
                 <FormControl>
                   <Input 
                     placeholder="Name*" 
-                    className="bg-gray-100" 
+                    className="hero-form-input" 
                     {...field} 
                   />
                 </FormControl>
@@ -60,13 +61,13 @@ const HeroForm: React.FC = () => {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <div className="flex">
-                    <div className="bg-gray-100 flex items-center px-3 rounded-l-md border border-r-0 border-input">
+                  <div className="hero-form-phone">
+                    <div className="hero-form-country-code">
                       +91
                     </div>
                     <Input 
                       placeholder="Phone Number*" 
-                      className="bg-gray-100 rounded-l-none" 
+                      className="hero-form-phone-input" 
                       type="tel"
                       {...field} 
                     />
@@ -84,7 +85,7 @@ const HeroForm: React.FC = () => {
                 <FormControl>
                   <Input 
                     placeholder="E-mail*" 
-                    className="bg-gray-100" 
+                    className="hero-form-input" 
                     type="email"
                     {...field} 
                   />
@@ -93,16 +94,16 @@ const HeroForm: React.FC = () => {
             )}
           />
           
-          <div className="pt-2">
-            <div className="bg-gray-100 rounded p-4 mb-4 flex items-start">
-              <div className="w-4 h-4 mr-2 border border-gray-400 mt-1"></div>
-              <span className="text-sm text-gray-600">I'm not a robot</span>
+          <div className="hero-form-recaptcha">
+            <div className="hero-form-recaptcha-box">
+              <div className="hero-form-recaptcha-checkbox"></div>
+              <span className="hero-form-recaptcha-text">I'm not a robot</span>
             </div>
           </div>
           
           <Button 
             type="submit" 
-            className="w-full bg-primary hover:bg-primary-dark text-white"
+            className="hero-form-submit"
           >
             submit
           </Button>
